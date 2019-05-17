@@ -137,7 +137,7 @@ class _Repository(models.GitHubCore):
         url = self._build_url(
             "collaborators", str(username), base_url=self._api
         )
-        return self._boolean(self._put(url), 201, 404)
+        return self._boolean(self._put(url), 204, 404)
 
     def archive(self, format, path="", ref="master"):
         """Get the tarball or zipball archive for this repo at ref.
